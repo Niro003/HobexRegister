@@ -20,8 +20,8 @@
                 <label class="col-md-4">Firmenname*</label>
                 <div class="col-md-8">
                     <input class="form-control" name="name" type="text" ng-model="user.name"
-                           uib-tooltip="{{(userForm.name.$error.required) ? 'You have an error with this field' : ''}}" tooltip-enable="!user.name"
-                           tooltip-trigger="{{{true: 'mouseenter', false: 'never'}[userForm.name.$error.required]}}" tooltip-placement="bottom"
+                           uib-tooltip="{{(userForm.name.$error.required) ? 'Der Firmenname ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom"
                            required>
                 </div>
             </div>
@@ -30,8 +30,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Adresse*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" name="address" ng-model="user.address" placeholder="Adresse" required>
-                    <p class="help-block" ng-if="userForm.address.$error.required">Die Adresse ist nicht gültig</p>
+                    <input class="form-control" type="text" name="address" ng-model="user.address"
+                           uib-tooltip="{{(userForm.address.$error.required) ? 'Die Adresse ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" placeholder="Adresse" required>
                 </div>
             </div>
         </div>
@@ -39,8 +40,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Plz/Ort*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.place" name="place" placeholder="Plz/Ort" required>
-                    <p class="help-block" ng-if="userForm.place.$error.required">Der Plz/Ort ist nicht gültig</p>
+                    <input class="form-control" type="text" ng-model="user.place"
+                           uib-tooltip="{{(userForm.place.$error.required) ? 'Der Plz/Ort ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="place" placeholder="Plz/Ort" required>
                 </div>
             </div>
         </div>
@@ -48,8 +50,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Land*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.country" name="country" placeholder="Land" required>
-                    <p class="help-block" ng-if="userForm.country.$error.required">Das Land ist nicht gültig</p>
+                    <input class="form-control" type="text" ng-model="user.country"
+                           uib-tooltip="{{(userForm.country.$error.required) ? 'Das Land ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="country" placeholder="Land" required>
                 </div>
             </div>
         </div>
@@ -57,8 +60,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Telefonnummer*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.number" name="number" placeholder="Telefonnummer" required>
-                    <p class="help-block" ng-if="userForm.number.$error.required">Die Telefonnummer ist nicht gültig</p>
+                    <input class="form-control" type="text" ng-model="user.number"
+                           uib-tooltip="{{(userForm.number.$error.required) ? 'Die Telefonnummer ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="number" placeholder="Telefonnummer" required>
                 </div>
             </div>
         </div>
@@ -93,8 +97,10 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Name*</label>
                 <div class="col-md-8">
-                    <input class="form-control" name="contactName" type="text" ng-model="user.contactName" placeholder="Name" required>
-                    <p class="help-block" ng-if="userForm.contactName.$error.required">Der Name ist nicht gültig</p>
+                    <input class="form-control" name="contactName" type="text" ng-model="user.contactName"
+                           uib-tooltip="{{(userForm.contactName.$error.required) ? 'Der Firmenname ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom"
+                           required>
                 </div>
             </div>
         </div>
@@ -102,8 +108,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Adresse*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" name="address" ng-model="user.address" placeholder="Adresse" required>
-                    <p class="help-block" ng-if="userForm.address.$error.required">Die Adresse ist nicht gültig</p>
+                    <input class="form-control" type="text" name="contactAddress" ng-model="user.contactAddress"
+                           uib-tooltip="{{(userForm.contactAddress.$error.required) ? 'Die Adresse ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" placeholder="Adresse" required>
                 </div>
             </div>
         </div>
@@ -111,17 +118,19 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Plz/Ort*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.place" name="place" placeholder="Plz/Ort" required>
-                    <p class="help-block" ng-if="userForm.place.$error.required">Der Plz/Ort ist nicht gültig</p>
+                    <input class="form-control" type="text" ng-model="user.contactPlace"
+                           uib-tooltip="{{(userForm.contactPlace.$error.required) ? 'Der Plz/Ort ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="contactPlace" placeholder="Plz/Ort" required>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-lg-4">
             <div class="form-group" show-errors>
-                <label class="col-md-4">Land*<strong class="help-block" ng-if="userForm.country.$error.required">Das Land ist nicht gültig</strong></label>
+                <label class="col-md-4">Land*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.country" name="country" placeholder="Land" required>
-
+                    <input class="form-control" type="text" ng-model="user.contactCountry"
+                           uib-tooltip="{{(userForm.contactCountry.$error.required) ? 'Das Land ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="contactCountry" placeholder="Land" required>
                 </div>
             </div>
         </div>
@@ -129,8 +138,9 @@
             <div class="form-group" show-errors>
                 <label class="col-md-4">Telefonnummer*</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" ng-model="user.number" name="number" placeholder="Telefonnummer" required>
-                    <p class="help-block" ng-if="userForm.number.$error.required">Die Telefonnummer ist nicht gültig</p>
+                    <input class="form-control" type="text" ng-model="user.contactNumber"
+                           uib-tooltip="{{(userForm.contactNumber.$error.required) ? 'Die Telefonnummer ist nicht gültig' : ''}}"
+                           tooltip-trigger="'blur'" tooltip-placement="bottom" name="contactNumber" placeholder="Telefonnummer" required>
                 </div>
             </div>
         </div>
@@ -157,7 +167,7 @@
             </div>
         </div>
         <div class="row"></div>
-        <input class="btn-xlarge" type="submit" ng-click="update(user)" value="Send" style="background-color: #d10019;color: white"/>
+        <input class="btn-xlarge" type="submit" value="Send" style="background-color: #d10019;color: white"/>
 </form>
 
 </div>
